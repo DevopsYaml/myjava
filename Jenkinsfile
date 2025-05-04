@@ -2,14 +2,15 @@ pipeline {
     agent any
 
     tools {
-        maven 'mymaven' // Change this to your configured Maven version in Jenkins
-        jdk 'myjava'       // Change this to your configured JDK in Jenkins
+        maven 'mymaven' // Your configured Maven installation
+        jdk 'myjava'    // Your configured JDK installation
+        git 'mygit'     // Add this line for the Git tool
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/DevopsYaml/myjava.git'
+                git url: 'https://github.com/DevopsYaml/myjava.git'
             }
         }
 
@@ -18,7 +19,6 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-
 
         stage('Run') {
             steps {
