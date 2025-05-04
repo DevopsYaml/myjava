@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/DevopsYaml/myjava.git'
+                git branch: 'main', url: 'https://github.com/DevopsYaml/myjava.git'
             }
         }
 
@@ -27,4 +27,3 @@ pipeline {
         }
     }
 }
-
