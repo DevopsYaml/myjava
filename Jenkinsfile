@@ -7,6 +7,11 @@ pipeline {
         git 'mygit'     // Add this line for the Git tool
     }
 
+
+   triggers {
+        githubPush()  // 👈 This is the correct way to enable GitHub hook trigger
+    }
+
     stages {
         stage('Checkout') {
             steps {
